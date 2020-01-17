@@ -16,3 +16,6 @@ jobs:
         env
         cat ${GITHUB_EVENT_PATH}
         
+    - uses: tjamet/go-action-template@master
+      with:
+        milliseconds: 1000
