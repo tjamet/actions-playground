@@ -18,6 +18,8 @@ jobs:
         pattern: ${{ matrix.prefix }}/**/*.go
     - uses: actions-go/go-action@master
       if: steps.is-modified.outputs.modified
+      with:
+        milliseconds: 1000
  
   build:
 
