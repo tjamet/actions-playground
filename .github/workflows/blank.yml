@@ -17,6 +17,8 @@ jobs:
       with:
         pattern: ${{ matrix.prefix }}/**/*.go
     - run: echo "${{ steps.is-modified.outputs.modified }} ${{ steps.is-modified.outputs.modified-files }}"
+    - run: echo "${{ steps.is-modified.outputs.modified }} ${{ steps.is-modified.outputs.modified-files }}"
+      if: steps.is-modified.outputs.modified
     - uses: actions-go/go-action@master
       if: steps.is-modified.outputs.modified
       with:
