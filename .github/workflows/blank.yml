@@ -3,6 +3,22 @@ name: CI
 on: [push, pull_request, issues, fork, label, milestone, project, project_column]
 
 jobs:
+  
+  my-job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        prefix:
+        - pkg
+        - src
+    steps:
+    - uses: actions-go/modified@master
+      id: is-modified
+      with:
+        pattern: ${{ matrix.prefix }}/**/*.go
+    - uses: actions-go/go-action@master
+      if: steps.is-modified.outputs.modified
+ 
   build:
 
     runs-on: ubuntu-latest
