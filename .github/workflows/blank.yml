@@ -30,10 +30,6 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
-      with:
-        my-input: 
-        - hello
-        - world
       run: |
         env
         cat ${GITHUB_EVENT_PATH}
