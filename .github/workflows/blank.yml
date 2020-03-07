@@ -3,7 +3,6 @@ name: CI
 on: [push, pull_request, issues, fork, label, milestone, project, project_column]
 
 jobs:
-  
   my-job:
     runs-on: ubuntu-latest
     strategy:
