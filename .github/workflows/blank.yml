@@ -24,7 +24,6 @@ jobs:
         milliseconds: 1000
  
   build:
-
     runs-on: ubuntu-latest
 
     steps:
